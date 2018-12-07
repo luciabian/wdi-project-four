@@ -14,3 +14,14 @@ img {
     height: 400px;
   }
 }
+
+#map {
+  height: 500px;
+  width: 500px;
+  z-index: 0;
+}
+
+.leaflet-container {
+  height: 100%;
+  width: 100%;
+}

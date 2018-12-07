@@ -1,5 +1,6 @@
 const router = require('express').Router();
 const projects = require('../controllers/projects');
+const users = require('../controllers/user');
 const auth = require('../controllers/auth');
 // const secureRoute = require('../lib/secureRoute');
 
@@ -14,5 +15,9 @@ router.route('/projects/:id')
 
 router.post('/register', auth.register);
 router.post('/login', auth.login);
+
+router.route('/users/:id')
+  .get(users.showRoute);
+
 
 module.exports = router;

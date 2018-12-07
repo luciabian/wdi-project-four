@@ -18,7 +18,11 @@ mongoose.connect(dbURI, (err, db) => {
     {
       name: 'Animal Welfare',
       country: 'Tanzania',
-      image: 'https://isafari.s3.amazonaws.com/system/feature/38/sidebar_tanzania-wildlife.jpg'
+      image: 'https://isafari.s3.amazonaws.com/system/feature/38/sidebar_tanzania-wildlife.jpg',
+      location: {
+        lat: 6.3690,
+        lng: 34.8888
+      }
     }
   ])
     .then(projects => {

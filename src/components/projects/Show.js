@@ -2,6 +2,7 @@ import React from 'react';
 import axios from 'axios';
 
 import { handleChange } from '../../lib/common';
+import { Link } from 'react-router-dom';
 
 export default class ProjectShow extends React.Component {
   constructor(props) {
@@ -43,6 +44,9 @@ export default class ProjectShow extends React.Component {
           <p>Please wait...</p>
         }
         <button className="delete-button" onClick={this.handleDelete}>Delete</button>
+        <Link to={`/projects/${this.props.match.params.id}/edit`}>
+          <button className="edit-button">Update</button>
+        </Link>
       </section>
     );
   }

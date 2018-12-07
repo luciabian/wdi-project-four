@@ -9,6 +9,7 @@ function indexRoute(req, res, next) {
 }
 
 function showRoute(req, res, next) {
+  console.log('Index route');
   Project
     .findById(req.params.id)
     .exec()

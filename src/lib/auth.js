@@ -13,6 +13,10 @@ export function decodeToken() {
   return decoded;
 }
 
+export function getHeader() {
+  return { header: { Authorization: `Bearer ${getToken()}`}};
+}
+
 export function currentUserId() {
   return decodeToken().sub;
 }
