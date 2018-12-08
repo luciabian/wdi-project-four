@@ -14,7 +14,7 @@ export function decodeToken() {
 }
 
 export function getHeader() {
-  return { header: { Authorization: `Bearer ${getToken()}`}};
+  return { headers: { Authorization: `Bearer ${getToken()}`}};
 }
 
 export function currentUserId() {

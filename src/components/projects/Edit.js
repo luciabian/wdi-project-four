@@ -45,7 +45,7 @@ class ProjectUpdate extends React.Component{
                   <form onSubmit={this.handleSubmit}>
                     <div className="field">
                       <div className="control">
-                        <input className="input " onChange={this.handleChange}  value={this.state.project.name || ''}  name="name"/>
+                        <input className="input " onChange={this.handleChange}  value={this.state.project.name || ''}  name="name" placeholder="Name of the Project"/>
                       </div>
                     </div>
                     <div className="field">
@@ -60,7 +60,12 @@ class ProjectUpdate extends React.Component{
                     </div>
                     <div className="field">
                       <div className="control">
-                        <input className="input" onChange={this.handleChange}   value={this.state.project.location || ''}  name="location"  placeholder="Location(ltn,lng)"/>
+                        <input className="input" onChange={this.handleChange}   value={this.state.project.lat || ''}  name="lat"  placeholder="Latitude"/>
+                      </div>
+                    </div>
+                    <div className="field">
+                      <div className="control">
+                        <input className="input" onChange={this.handleChange}   value={this.state.project.lng || ''}  name="lng"  placeholder="Longitude"/>
                       </div>
                     </div>
                     <button className="button is-light">Update</button>

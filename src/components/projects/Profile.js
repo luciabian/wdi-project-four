@@ -1,6 +1,6 @@
 import React from 'react';
 import axios from 'axios';
-import { decodeToken, getHeader } from '../../lib/auth';
+import { currentUserId, getHeader } from '../../lib/auth';
 
 export default class Profile extends React.Component {
   constructor(props) {
@@ -10,10 +10,10 @@ export default class Profile extends React.Component {
 
   componentDidMount() {
     console.log('This is this.state.user', this.state.user);
-    axios.get(`/api/profile/${decodeToken().sub}`, getHeader())
+    axios.get(`/api/profile/${currentUserId()}`, getHeader())
       .then(res => {
+        console.log('We have res.data', res.data);
         this.setState({ user: res.data });
-        console.log('We have', this.state.user);
       });
   }
 

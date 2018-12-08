@@ -1,11 +1,28 @@
 .project-box {
+  height: 400px;
+  width: 340px;
+  overflow-x: scroll;
+  align-items: center;
+  margin: 10px 0;
+  padding: 0 5px;
+  .title {
+    margin: 7px 0;
+  }
+  p {
+    text-align: justify;
+  }
   img {
-    height: 250px;
+    height: 150px;
+    width: 340px;
+    // border: solid black 1px;
+  }
+  .subtitle {
+    margin: 10px 0;
   }
 }
 
 img {
-  object-fit: contain;
+  object-fit: cover;
 }
 
 .show-box {
@@ -16,12 +33,16 @@ img {
 }
 
 #map {
-  height: 500px;
-  width: 500px;
+  height: 350px;
+  width: 100%;
   z-index: 0;
 }
 
 .leaflet-container {
   height: 100%;
   width: 100%;
+}
+
+.box-container {
+  text-align: center;
 }

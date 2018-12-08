@@ -16,7 +16,7 @@ router.route('/projects/:id')
 router.post('/register', auth.register);
 router.post('/login', auth.login);
 
-router.route('/users/:id')
+router.route('/profile/:id')
   .get(users.showRoute);
 
 

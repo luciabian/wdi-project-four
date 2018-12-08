@@ -13,7 +13,7 @@ class ProjectIndex extends React.Component {
 
   getProjects() {
     axios.get('/api/projects')
-      .then(res => this.setState({ projects: res.data }, () => console.log('state is ', this.state)));
+      .then(res => this.setState({ projects: res.data }));
   }
 
   componentDidMount() {
@@ -34,6 +34,7 @@ class ProjectIndex extends React.Component {
               projects={this.state.projects} />
           }
         </div>
+        <hr />
         <div className="box-container columns is-multiline">
           {this.state.projects && this.state.projects.map(
             project => <ProjectBox key={project._id} project={project}/>

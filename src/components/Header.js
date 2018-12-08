@@ -1,6 +1,6 @@
 import React from 'react';
 import { Link, withRouter } from 'react-router-dom';
-import { isAuthenticated, deleteToken, decodeToken } from '../lib/auth';
+import { isAuthenticated, deleteToken, currentUserId } from '../lib/auth';
 
 class Header extends React.Component {
   constructor(props) {
@@ -18,7 +18,6 @@ class Header extends React.Component {
       <nav className="navbar">
         <div className="navbar-brand">
           <h2 className="title is-2">Volunteering</h2>
-          {isAuthenticated() && <p>Welcome back! {decodeToken().username}</p>}
         </div>
         <div className="navbar-end">
           <Link className="navbar-item" to="/">Home</Link>
@@ -26,8 +25,8 @@ class Header extends React.Component {
           <Link className="navbar-item" to='/projects/new'>Add a Project</Link>
           {isAuthenticated() && <a onClick={this.handleLogout} className="navbar-item">Log Out</a>}
           {!isAuthenticated() && <Link className="navbar-item" to="/login">Log In</Link>}
-          {!isAuthenticated() && <Link className="navbar-item" to="/register">Sign Up!</Link>}
-          {isAuthenticated() && <Link className="navbar-item" to={`/profile/${decodeToken().sub}`}>My Profile</Link>}
+          {!isAuthenticated() && <Link className="navbar-item" to="/register">Sign Up</Link>}
+          {isAuthenticated() && <Link className="navbar-item" to={`/profile/${currentUserId()}`}>My Profile</Link>}
         </div>
       </nav>
     );
