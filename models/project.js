@@ -5,7 +5,8 @@ const projectSchema = new mongoose.Schema({
   country: String,
   image: String,
   lat: Number,
-  lng: Number
+  lng: Number,
+  createdBy: { type: mongoose.Schema.ObjectId, ref: 'User' }
 });
 
 module.exports = mongoose.model('Project', projectSchema);

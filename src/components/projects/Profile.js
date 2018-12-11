@@ -9,7 +9,6 @@ export default class Profile extends React.Component {
   }
 
   componentDidMount() {
-    console.log('This is this.state.user', this.state.user);
     axios.get(`/api/profile/${currentUserId()}`, getHeader())
       .then(res => {
         console.log('We have res.data', res.data);

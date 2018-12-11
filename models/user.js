@@ -41,4 +41,14 @@ userSchema.pre('save', function hashPassword(next){
   next();
 });
 
+userSchema.virtual('projectsCreated', {
+  ref: 'Project',
+  localField: '_id',
+  foreignField: 'createdBy'
+});
+
+userSchema.set('toJSON', {
+  virtuals: true
+});
+
 module.exports = mongoose.model('User', userSchema);

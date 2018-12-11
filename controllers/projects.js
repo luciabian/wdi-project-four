@@ -1,5 +1,4 @@
 const Project = require('../models/project');
-const rp = require('request-promise');
 
 function indexRoute(req, res, next) {
   Project
@@ -13,6 +12,7 @@ function showRoute(req, res, next) {
   console.log('Index route');
   Project
     .findById(req.params.id)
+    .populate('createdBy name.createdBy')
     .exec()
     .then(project => res.json(project))
     .catch(next);
@@ -26,13 +26,11 @@ function createRoute(req, res, next) {
 }
 
 function updateRoute(req, res, next) {
+  console.log('This is req.params.id', req.params.id);
   Project
     .findById(req.params.id)
-    .exec()
-    .then(project => {
-      Object.assign(project, req.body);
-      return project.save();
-    })
+    .then(project => project.set(req.body))
+    .then(project => project.save())
     .then(project => res.json(project))
     .catch(next);
 }

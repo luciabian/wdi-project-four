@@ -1,6 +1,7 @@
 const router = require('express').Router();
 const projects = require('../controllers/projects');
 const users = require('../controllers/user');
+const messages = require('../controllers/messages');
 const auth = require('../controllers/auth');
 // const secureRoute = require('../lib/secureRoute');
 
@@ -18,6 +19,13 @@ router.post('/login', auth.login);
 
 router.route('/profile/:id')
   .get(users.showRoute);
+
+router.route('/messages')
+  .get(messages.index)
+  .post(messages.create);
+
+router.route('/messages/:id')
+  .delete(messages.delete);
 
 
 module.exports = router;

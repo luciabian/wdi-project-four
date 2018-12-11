@@ -2,6 +2,7 @@ import React from 'react';
 import axios from 'axios';
 
 import { handleChange } from '../../lib/common';
+import { getToken } from '../../lib/common';
 import { Link } from 'react-router-dom';
 
 export default class ProjectShow extends React.Component {
@@ -13,7 +14,10 @@ export default class ProjectShow extends React.Component {
   }
 
   handleDelete() {
-    axios.delete(`/api/projects/${this.state.project._id}`)
+    const token = getToken();
+    axios.delete(`/api/projects/${this.state.project._id}`, {
+      headers: {Authorization: `Bearer ${token}`}
+    })
       .then(() => {
         this.props.history.push('/projects');
       });

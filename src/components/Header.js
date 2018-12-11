@@ -17,16 +17,16 @@ class Header extends React.Component {
     return (
       <nav className="navbar">
         <div className="navbar-brand">
-          <h2 className="title is-2">Volunteering</h2>
+          <Link className="navbar-item" to="/">HOME</Link>
         </div>
         <div className="navbar-end">
-          <Link className="navbar-item" to="/">Home</Link>
-          <Link className="navbar-item" to="/projects">All the Projects</Link>
-          <Link className="navbar-item" to='/projects/new'>Add a Project</Link>
-          {isAuthenticated() && <a onClick={this.handleLogout} className="navbar-item">Log Out</a>}
-          {!isAuthenticated() && <Link className="navbar-item" to="/login">Log In</Link>}
-          {!isAuthenticated() && <Link className="navbar-item" to="/register">Sign Up</Link>}
-          {isAuthenticated() && <Link className="navbar-item" to={`/profile/${currentUserId()}`}>My Profile</Link>}
+          <Link className="navbar-item" to="/projects">DESTINATIONS AND PROGRAMS</Link>
+          {isAuthenticated() && <Link className="navbar-item" to='/projects/new'>ADD A PROJECT</Link>}
+          {isAuthenticated() && <a onClick={this.handleLogout} className="navbar-item">LOG OUT</a>}
+          {isAuthenticated() && <Link className="navbar-item" to="/messages">MESSAGES</Link>}
+          {!isAuthenticated() && <Link className="navbar-item" to="/login">LOG IN</Link>}
+          {!isAuthenticated() && <Link className="navbar-item" to="/register">SIGN UP</Link>}
+          {isAuthenticated() && <Link className="navbar-item" to={`/profile/${currentUserId()}`}>MY PROFILE</Link>}
         </div>
       </nav>
     );

@@ -28,3 +28,7 @@ export function deleteToken() {
 export function isAuthenticated() {
   return !!getToken();
 }
+
+export function tokenUsername() {
+  return decodeToken().username;
+}
