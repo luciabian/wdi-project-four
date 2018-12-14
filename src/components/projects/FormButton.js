@@ -2,7 +2,7 @@ import React from 'react';
 
 function FormButton({ text }) {
   return(
-    <button className="button is-link is-outlined">{text}</button>
+    <button className="button is-light">{text}</button>
   );
 }
 

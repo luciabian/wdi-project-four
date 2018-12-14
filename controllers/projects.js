@@ -12,7 +12,7 @@ function showRoute(req, res, next) {
   console.log('Index route');
   Project
     .findById(req.params.id)
-    .populate('createdBy name.createdBy')
+    .populate('createdBy name.createdBy createdBy.projectsCreated')
     .exec()
     .then(project => res.json(project))
     .catch(next);

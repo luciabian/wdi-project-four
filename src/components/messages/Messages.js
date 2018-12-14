@@ -46,12 +46,13 @@ class Messages extends React.Component {
   render() {
     const messages = this.state.messages;
     return(
-      <main>
-        <h1 className="title is-2">Messages</h1>
-        <div className="message-container">
+      <main className="messages">
+        <h1 className="title is-2">MESSAGES</h1>
+        <div className=" card message-container">
           <div className="sidebar">
             <Sidebar messages={messages} handleClick={this.pickConversation}/>
           </div>
+          <hr />
           <div className="messages-main">
             <div className="conversation">
               <Conversation handleDelete={this.deleteMessage} {...this.state}/>

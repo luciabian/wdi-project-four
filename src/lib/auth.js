@@ -21,6 +21,11 @@ export function currentUserId() {
   return decodeToken().sub;
 }
 
+export function tokenUserId() {
+  return decodeToken().sub;
+}
+
+
 export function deleteToken() {
   localStorage.removeItem('album-token');
 }

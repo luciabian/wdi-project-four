@@ -38,19 +38,28 @@ export default class ProjectShow extends React.Component {
         {project
           ?
           <div>
-            <div className="columns show-box">
+            <div className="show-box">
               <h1 className="title is-1">{project.name} in {project.country}</h1>
               <hr />
-              <img src={project.image} alt={project.name} />
+              <div>
+                <img src={project.image} alt={project.name} />
+                <div>
+                  <h2 className="subtitle is-3">About {project.name}</h2>
+                  <p>{project.description}</p>
+                </div>
+                <div>
+                  <h2 className="subtitle is-3">About {project.country}</h2>
+                  <p>{project.countryInfo}</p>
+                </div>
+              </div>
+              <Link to="/messages">
+                <button className="button is-light">Ask for more information</button>
+              </Link>
             </div>
           </div>
           :
           <p>Please wait...</p>
         }
-        <button className="delete-button" onClick={this.handleDelete}>Delete</button>
-        <Link to={`/projects/${this.props.match.params.id}/edit`}>
-          <button className="edit-button">Update</button>
-        </Link>
       </section>
     );
   }

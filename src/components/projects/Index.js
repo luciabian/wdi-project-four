@@ -23,7 +23,7 @@ class ProjectIndex extends React.Component {
   render() {
     return (
       <section className="section">
-        <h1 className="title">Where do you want to go next?</h1>
+        <h1 className="title is-2 volunteer">VOLUNTEER ABROAD PROGRAMS</h1>
         <hr />
         <div className="box-container">
           {!this.state.projects

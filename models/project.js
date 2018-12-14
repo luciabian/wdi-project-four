@@ -6,6 +6,8 @@ const projectSchema = new mongoose.Schema({
   image: String,
   lat: Number,
   lng: Number,
+  countryInfo: String,
+  description: String,
   createdBy: { type: mongoose.Schema.ObjectId, ref: 'User' }
 });
 

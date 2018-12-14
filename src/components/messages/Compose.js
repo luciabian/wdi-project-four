@@ -1,9 +1,15 @@
 import React from 'react';
-// import { decodeToken } from '../../lib/auth';
+import { decodeToken } from '../../lib/auth';
 
 function Compose(props) {
   return (
     <article className="media">
+      <figure className="media-left">
+        <p className="image is-64x64">
+          <img src={decodeToken().image}/>
+        </p>
+      </figure>
+
       <div className="media-content">
         <div className="field">
           <p className="control">
@@ -19,7 +25,7 @@ function Compose(props) {
         <nav className="level">
           <div className="level-left">
             <div className="level-item" onClick={props.handleSubmit}>
-              <a className="button is-info" disabled={!props.withUserId}>Submit</a>
+              <a className="button is-light" disabled={!props.withUserId}>Submit</a>
             </div>
           </div>
         </nav>

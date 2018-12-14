@@ -5,7 +5,7 @@ import { Link } from 'react-router-dom';
 const ProjectMap = ({ projects }) => {
   return (
     <div id='map'>
-      <Map center={projects[1]} zoom={2}>
+      <Map center={[7.369722, 12.354722]} zoom={2}>
         <TileLayer
           attribution='&copy; <a href="http://osm.org/copyright">OpenStreetMap</a> contributors'
           url='http://{s}.tile.osm.org/{z}/{x}/{y}.png'

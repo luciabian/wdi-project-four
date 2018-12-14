@@ -35,44 +35,64 @@ class ProjectUpdate extends React.Component{
 
   render() {
     return(
-      <section className="hero is-light is-fullheight">
-        <div className="hero-body">
-          <div className="container has-text-centered">
-            <div className="columns">
-              <div className="column is-6 is-offset-3 is-mobile">
-                <h3 className="title has-text-grey">Edit an item</h3>
-                <div className="box">
-                  <form onSubmit={this.handleSubmit}>
-                    <div className="field">
-                      <div className="control">
-                        <input className="input " onChange={this.handleChange}  value={this.state.project.name || ''}  name="name" placeholder="Name of the Project"/>
-                      </div>
-                    </div>
-                    <div className="field">
-                      <div className="control">
-                        <input className="input" onChange={this.handleChange}   value={this.state.project.country || ''}  name="country"  placeholder="Country"/>
-                      </div>
-                    </div>
-                    <div className="field">
-                      <div className="control">
-                        <input className="input" onChange={this.handleChange}   value={this.state.project.image || ''}  name="image"  placeholder="Image URL"/>
-                      </div>
-                    </div>
-                    <div className="field">
-                      <div className="control">
-                        <input className="input" onChange={this.handleChange}   value={this.state.project.lat || ''}  name="lat"  placeholder="Latitude"/>
-                      </div>
-                    </div>
-                    <div className="field">
-                      <div className="control">
-                        <input className="input" onChange={this.handleChange}   value={this.state.project.lng || ''}  name="lng"  placeholder="Longitude"/>
-                      </div>
-                    </div>
-                    <button className="button is-light">Update</button>
-                  </form>
+      <section>
+        <div className="columns">
+          <div className="card column is-6 is-offset-3 is-mobile">
+            <h1 className="title is-2">EDIT PROJECT</h1>
+
+            <form onSubmit={this.handleSubmit}>
+              <label className="label">NAME:</label>
+              <div className="field">
+                <div className="control">
+                  <input className="input " onChange={this.handleChange}  value={this.state.project.name || ''}  name="name" placeholder="Name of the Project"/>
                 </div>
               </div>
-            </div>
+
+              <div className="field">
+                <label className="label">COUNTRY:</label>
+                <div className="control">
+                  <input className="input" onChange={this.handleChange}   value={this.state.project.country || ''}  name="country"  placeholder="Country"/>
+                </div>
+              </div>
+
+              <div className="field">
+                <label className="label">IMAGE URL:</label>
+                <div className="control">
+                  <input className="input" onChange={this.handleChange}   value={this.state.project.image || ''}  name="image"  placeholder="Image URL"/>
+                </div>
+              </div>
+
+              <div className="field">
+                <label className="label">LATITUDE:</label>
+                <div className="control">
+                  <input className="input" onChange={this.handleChange}   value={this.state.project.lat || ''}  name="lat"  placeholder="Latitude"/>
+                </div>
+              </div>
+
+              <div className="field">
+                <label className="label">LONGITUDE:</label>
+                <div className="control">
+                  <input className="input" onChange={this.handleChange}   value={this.state.project.lng || ''}  name="lng"  placeholder="Longitude"/>
+                </div>
+              </div>
+
+              <div className="field">
+                <label className="label">COUNTRY INFORMATION:</label>
+                <div className="control">
+                  <input className="input" onChange={this.handleChange}   value={this.state.project.countryInfo || ''}  name="countryInfo"  placeholder="Short description of the country"/>
+                </div>
+              </div>
+
+              <div className="field">
+                <label className="label">PROJECT DESCRIPTION:</label>
+                <div className="control">
+                  <input className="input" onChange={this.handleChange}   value={this.state.project.description || ''}  name="description"  placeholder="Simple description of the project"/>
+                </div>
+              </div>
+
+              <button className="button is-light">Update</button>
+            </form>
+
           </div>
         </div>
       </section>

@@ -20,8 +20,7 @@ export default class ProjectNew extends React.Component {
 
   render() {
     return(
-      <section>
-        <h2 className="title is-2">Add a Project!</h2>
+      <section className="project-form">
         <ProjectForm
           handleChange = {this.handleChange}
           handleSubmit = {this.handleSubmit}
